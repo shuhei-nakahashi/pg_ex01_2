@@ -5,10 +5,21 @@ public class RomanNumberHenkan {
 	//1～20の数をローマ数字に変換するメソッド
 	public String romanNumberHenkan(int input) {
 
+		if(notBetweenOneToTwenty(input))
+			return "変換できません";
+
 		int futaketameNum = input/10;//2桁目の数
 		int hitoketameNum = input%10;//1桁目の数
 
 		return romanNumKurikaeshi(futaketameNum,'X') + hitoketameToRomanNum(hitoketameNum);
+	}
+
+	//入力が0以下もしくは21以上かどうか判断するメソッド
+	private boolean notBetweenOneToTwenty(int input) {
+		if(input<=0 || 21<=input)
+			return true;
+		else
+			return false;
 	}
 
 	//1桁目の数を入力としローマ数字に変換するメソッド

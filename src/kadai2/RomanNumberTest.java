@@ -51,6 +51,21 @@ public class RomanNumberTest {
 		assertEquals("XI",rNH.romanNumberHenkan(11));
 	}
 
+	@Test
+	public void testLessThanZero() {
+		RomanNumberHenkan rNH = new RomanNumberHenkan();
+		assertEquals("変換できません",rNH.romanNumberHenkan(0));
+		assertEquals("変換できません",rNH.romanNumberHenkan(-100));
+	}
+
+	@Test
+	public void testMoreThanTwenty() {
+		RomanNumberHenkan rNH = new RomanNumberHenkan();
+		assertEquals("変換できません",rNH.romanNumberHenkan(21));
+		assertEquals("変換できません",rNH.romanNumberHenkan(22));
+	}
+
+
 
 
 }
